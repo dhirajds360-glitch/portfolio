@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhiraj Dilip Sakhare | Design Portfolio</title>
+  <!-- Tailwind CSS CDN for high-performance visual styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Gotham Alternatives (Inter & Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --dark-tangerine: #FF8A00;
+      --bg-dark: #0B0B0C;
+      --card-bg: #131315;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+    }
+    .font-display {
+      font-family: 'Montserrat', sans-serif; /* Fallback placeholder matching the heavy geometric footprint of Arkhip/Gotham Bold */
+    }
+    .text-tangerine { color: var(--dark-tangerine); }
+    .bg-tangerine { background-color: var(--dark-tangerine); }
+    .border-tangerine { border-color: var(--dark-tangerine); }
+  </style>
+</head>
+<body class="text-gray-100 antialiased selection:bg-[#FF8A00] selection:text-black">
+
+  <!-- Fixed Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0C]/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <div class="font-display font-black text-xl tracking-tighter uppercase">
+        DHIRAJ<span class="text-tangerine">.</span>
+      </div>
+      <div class="flex items-center space-x-8 text-sm font-medium tracking-wide text-gray-400">
+        <a href="#work" class="hover:text-tangerine transition-colors">Work</a>
+        <a href="#about" class="hover:text-tangerine transition-colors">About</a>
+        <a href="#contact" class="bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-tangerine hover:text-white transition-all duration-300">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Splash Canvas -->
+  <header class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+    <!-- Abstract Ambient Glow Backgrounds -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-tangerine/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center z-10">
+      <p class="text-sm font-mono tracking-[0.3em] text-tangerine uppercase mb-4 animate-fade-in">Graphic Designer & Art Director</p>
+      <h1 class="font-display font-black text-5xl md:text-8xl tracking-tight leading-none mb-8 uppercase">
+        Unleash the enigma <br>of my work<span class="text-tangerine">.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+        Crafting elite brand identities, premium keyline packaging, and high-impact digital experiences for industry leaders.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#work" class="w-full sm:w-auto bg-tangerine text-black font-bold uppercase tracking-wider px-8 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-tangerine/20">
+          View Selected Work
+        </a>
+        <a href="#contact" class="w-full sm:w-auto border border-white/20 bg-white/5 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+    
+    <!-- Decorative bottom anchor -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono tracking-widest text-gray-500 uppercase animate-bounce">
+      Scroll to explore ↓
+    </div>
+  </header>
+
+  <!-- Main Selected Portfolio Work Portfolio Case Studies -->
+  <main id="work" class="max-w-7xl mx-auto px-6 py-24 space-y-32">
+    
+    <!-- Section Header -->
+    <div class="border-b border-white/10 pb-6 flex justify-between items-end">
+      <div>
+        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">01 // Main Showcases</p>
+        <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tight">Selected Workfolio</h2>
+      </div>
+      <span class="text-sm font-mono text-gray-500 hidden sm:inline">CREATIVE PORTFOLIO ©2026</span>
+    </div>
+
+    <!-- PROJECT #1: LOYKA CONFECTIONERY PREMIUM CHOCOLATE PACKAGING -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Media/Mockup Gallery Layer -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
+          <img src="images/loyka-main.jpg" alt="Loyka Almond Florentine Box Mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span class="bg-black/80 text-white font-mono text-xs tracking-widest uppercase px-4 py-2 rounded border border-white/10">Premium Keyline Box</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/loyka-detail1.jpg" alt="Almond Florentine Choco ingredients close up Layout" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/loyka-detail2.jpg" alt="Spella Cookie Mini Cashews / Brownie Pack" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+      <!-- Project Metadata Layout Panel -->
+      <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-tangerine bg-tangerine/10 border border-tangerine/20 px-3 py-1 rounded-full">Packaging Design</span>
+          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Loyka Almond Florentine</h3>
+          <p class="text-gray-400 font-mono text-sm">Client: August Assortments Pvt. Ltd. // Confectionery</p>
+        </div>
+        
+        <p class="text-gray-300 leading-relaxed font-light">
+          A delightful harmony of crunchy almonds and delicate sweetness of caramel wrapped in premium choco to create a bite-sized masterpiece. Built a cohesive premium keyline, shelf distribution graphics setup, and alternative brand extension wraps for Spella Cookie Mini (Cashews & Brownie lines).
+        </p>
+
+        <!-- Typography Breakdown Asset Container -->
+        <div class="p-6 bg-[#131315] border border-white/5 rounded-xl space-y-4">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-tangerine">Typography Integration</h4>
+          <div class="flex items-center justify-between border-b border-white/5 pb-2">
+            <span class="font-display font-bold text-lg">ARKHIP BOLD</span>
+            <span class="text-xs text-gray-500 font-mono">Display Typeface</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-sans font-medium text-sm">Gotham Series</span>
+            <span class="text-xs text-gray-500 font-mono">Light / Medium / Bold / Italic</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-6 text-sm font-mono">
+          <div>
+            <span class="text-gray-500 block">Net Weight:</span>
+            <span class="text-white">180 Grams (12 Pcs)</span>
+          </div>
+          <div>
+            <span class="text-gray-500 block">Deliverable:</span>
+            <span class="text-white">PAN India Commercial Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT #2: APSTROMEDIA CORPORATE BRAND IDENTITY MANUAL -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-12">
+      <!-- Project Metadata Layout Panel -->
+      <div class="lg:col-span-5 lg:order-1 lg:sticky lg:top-32 space-y-8">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">Identity & App Design</span>
+          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Apstromedia Identity</h3>
+          <p class="text-gray-400 font-mono text-sm">Deliverables: Logo Systems, App Design Guidelines (Android/iOS)</p>
+        </div>
+        
+        <p class="text-gray-300 leading-relaxed font-light">
+          Engineered a highly disciplined corporate identity guideline designed around sunset warmth and technical precision. Extensively mapped application layouts, cross-platform assets, scalability rules, and visual asset governance across dark systems.
+        </p>
+
+        <!-- Dynamic Color Palette Grid -->
+        <div class="p-6 bg-[#131315] border border-white/5 rounded-xl space-y-4">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-tangerine">Signature Brand Colorway</h4>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-lg bg-tangerine shadow-inner flex-shrink-0"></div>
+            <div>
+              <p class="text-sm font-bold text-white">Dark Tangerine</p>
+              <p class="text-xs text-gray-400 leading-normal font-light">Associated with energy, youth, and happiness. Pairs beautifully with tones of sunsets like yellows, deep blues, and structural creams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Media/Mockup Gallery Layer -->
+      <div class="lg:col-span-7 lg:order-2 space-y-6">
+        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
+          <img src="images/apstromedia-brand.jpg" alt="Apstromedia Logo Book Architecture Guidelines" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="aspect-[4/3] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/apstromedia-ui1.jpg" alt="Android Interface App UI Framework Layout" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-[4/3] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/apstromedia-ui2.jpg" alt="iOS Mobile Design Setup View" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT #3: CAMPO VIEJO & JACOB'S CREEK SOCIAL MATRICES -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-12">
+      <!-- Media/Mockup Gallery Layer -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
+          <img src="images/wine-campaign-main.jpg" alt="Campo Viejo Tempranillo Wine Instagram Ad Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/jacobs-creek.jpg" alt="Jacob's Creek Our Wines Toolkit Poster Creative" class="w-full h-full object-cover">
+          </div>
+          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
+            <img src="images/sunset-sessions.jpg" alt="Sunset Music Campaign Layout Portfolio Design" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+      <!-- Project Metadata Layout Panel -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Art Direction & Toolkit Campaigns</span>
+          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Pernod Ricard Portfolio Assets</h3>
+          <p class="text-gray-400 font-mono text-sm">Brands: Campo Viejo (Rioja Wine #1), Jacob's Creek</p>
+        </div>
+        
+        <p class="text-gray-300 leading-relaxed font-light">
+          Engineered hyper-expressive visual kits and performance advertisement frameworks mapping the product aesthetics onto regional themes. Infused design assets with descriptive tag configurations like <strong>"Bold, Sunny, Happy, Smooth, Mellow, and Tropical"</strong> under the concept of the Indian Sun.
+        </p>
+
+        <!-- Multi-brand asset tag layout cloud -->
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">TEMPRANILLO TOOLKIT</span>
+          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">WHEAT & FINEST BREWS</span>
+          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">THE RIVERS SERIES</span>
+          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">FIRESTARTER MIXTAPE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: MISCELLANEOUS ADDITIONAL MEDIA AND POSTERS GRID -->
+    <section class="space-y-12 pt-12">
+      <div class="border-b border-white/10 pb-6">
+        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">02 // Alternative Creative Vectors</p>
+        <h3 class="font-display font-black text-2xl md:text-4xl uppercase tracking-tight">Public Welfare, Entertainment & Concept Art</h3>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Poster item 1 -->
+        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
+          <img src="images/poster-welfare.jpg" alt="Public Welfare Public awareness visual art poster design" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
+            <p class="text-xs font-mono text-tangerine">PUBLIC WELFARE</p>
+          </div>
+        </div>
+        <!-- Poster item 2 -->
+        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
+          <img src="images/poster-tribevibe.jpg" alt="TribeVibe Entertainment Event Poster Identity layout artwork" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
+            <p class="text-xs font-mono text-tangerine">TRIBEVIBE ENTERTAINMENT</p>
+          </div>
+        </div>
+        <!-- Poster item 3 -->
+        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
+          <img src="images/poster-drake.jpg" alt="Don't Let Daddy Know Drake Variant Music Poster Canvas Art" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
+            <p class="text-xs font-mono text-tangerine">DONT LET DADDY KNOW</p>
+          </div>
+        </div>
+        <!-- Poster item 4 -->
+        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
+          <img src="images/poster-envision.jpg" alt="Envision Worx Thinkclusive Corporate Creative vector asset" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
+            <p class="text-xs font-mono text-tangerine">ENVISION / THINKCLUSIVE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- About / Experience Summary Canvas Block Section -->
+  <section id="about" class="bg-[#131315] border-y border-white/5 py-24 px-6 relative">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-4">
+        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">03 // The Designer</p>
+        <h3 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tight leading-none">Dhiraj Dilip Sakhare<span class="text-tangerine">.</span></h3>
+        <p class="text-gray-500 font-mono text-xs mt-4">FREELANCE VECTOR ARTIST & GRAPHIC DESIGNER</p>
+      </div>
+      <div class="md:col-span-8 text-gray-400 font-light leading-relaxed space-y-6 text-base md:text-lg">
+        <p>
+          Operating at the crossroads of structured brand manuals and expressive packaging mechanics. Experienced in taking products from baseline industrial structural guides to highly competitive, market-ready consumer packaging configurations across global and regional commercial landscapes.
+        </p>
+        <div class="grid grid-cols-2 gap-6 pt-4 text-sm font-mono">
+          <div>
+            <h5 class="text-white font-bold mb-1">Core Expertise</h5>
+            <ul class="space-y-1 text-gray-500">
+              <li>• Keyline & Packaging Layouts</li>
+              <li>• Complete Visual Identities</li>
+              <li>• Dynamic Media Toolkits</li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-white font-bold mb-1">Brand Experiences</h5>
+            <ul class="space-y-1 text-gray-500">
+              <li>• Loyka Confectionery</li>
+              <li>• Pernod Ricard India</li>
+              <li>• Apstromedia Systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Artistic Showroom Call To Action Footer Section -->
+  <section id="contact" class="max-w-5xl mx-auto px-6 py-28 text-center relative">
+    <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-4">Connect and Create</p>
+    <h2 class="font-display font-black text-4xl md:text-7xl uppercase tracking-tight mb-8">
+      Witness an <br>Artistic Marvel<span class="text-tangerine">.</span>
+    </h2>
+    <p class="text-gray-400 max-w-xl mx-auto font-light leading-relaxed mb-12">
+      Reach out to me for an enchanting showcase of my extensive creative ecosystem or to commission industrial grade artwork.
+    </p>
+    
+    <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-6 p-2 bg-[#131315] border border-white/5 rounded-2xl max-w-xl mx-auto w-full">
+      <span class="text-sm font-mono px-4 text-gray-300 py-3 sm:py-0">dhiraj.sakhare.design@example.com</span>
+      <a href="mailto:dhiraj.sakhare.design@example.com" class="w-full sm:w-auto bg-white text-black font-bold uppercase text-xs tracking-wider px-6 py-4 rounded-xl hover:bg-tangerine hover:text-white transition-all duration-300">
+        Send Email Instant
+      </a>
+    </div>
+  </section>
+
+  <!-- Absolute Base Structural Footer Bar Container -->
+  <footer class="border-t border-white/5 py-12 text-center text-xs font-mono text-gray-600 tracking-wider">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 DHIRAJ DILIP SAKHARE. ALL RIGHTS PROTECTED.</p>
+      <div class="space-x-6 text-gray-500">
+        <a href="#" class="hover:text-tangerine transition-colors">BEHANCE</a>
+        <a href="#" class="hover:text-tangerine transition-colors">INSTAGRAM</a>
+        <a href="#" class="hover:text-tangerine transition-colors">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
