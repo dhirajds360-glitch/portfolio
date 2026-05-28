@@ -1,503 +1,329 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhiraj Dilip Sakhare | Portfolio</title>
-    <!-- Importing smooth modern fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #141414;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --accent-orange: #F39200; /* Dark Tangerine */
-            --accent-yellow: #FFB319; /* Vibrant Yellow */
-            --border-color: #222222;
-        }
+export default function DhirajPortfolio() {
+  const projects = [
+    {
+      title: "Loyka Chocolate Packaging",
+      category: "Creative Head • Packaging Design",
+      year: "2022–2026",
+      desc: "Premium chocolate packaging systems, festive collections, luxury box concepts and brand storytelling for Loyka.",
+    },
+    {
+      title: "Brand Identity Systems",
+      category: "Branding & Visual Direction",
+      year: "2018–Present",
+      desc: "Complete visual identity development including logo systems, packaging grids and communication design.",
+    },
+    {
+      title: "ATL + BTL Campaigns",
+      category: "Marketing Design",
+      year: "Multiple Brands",
+      desc: "Creative campaigns, retail communication, print collateral and experiential visual concepts.",
+    },
+    {
+      title: "Luxury Product Visualisation",
+      category: "Creative Direction",
+      year: "Featured Works",
+      desc: "High-end mockups, premium visual storytelling and product showcase presentations.",
+    },
+  ];
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+  const skills = [
+    "Packaging Design",
+    "Creative Direction",
+    "Brand Identity",
+    "Luxury Visual Design",
+    "ATL / BTL Design",
+    "Social Media Campaigns",
+    "Typography",
+    "Illustration",
+    "Art Direction",
+    "Print Design",
+  ];
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+  const timeline = [
+    {
+      year: "2016",
+      title: "Applied Art Journey",
+      text: "Started professional journey in applied art, design exploration and visual storytelling.",
+    },
+    {
+      year: "2018",
+      title: "Professional Creative Industry",
+      text: "Worked with multiple brands as a graphic designer building strong branding and packaging expertise.",
+    },
+    {
+      year: "2022",
+      title: "Joined Loyka",
+      text: "Became part of Loyka’s creative ecosystem and contributed to luxury chocolate packaging and branding.",
+    },
+    {
+      year: "2026",
+      title: "Creative Head",
+      text: "Leading creative direction with over 8 years of experience in premium packaging and visual communication.",
+    },
+  ];
 
-        h1, h2, h3 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-        }
+  return (
+    <div className="bg-black text-white min-h-screen overflow-hidden selection:bg-white selection:text-black">
+      {/* Background */}
+      <div className="fixed inset-0 -z-10 opacity-40">
+        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-purple-600 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500 blur-3xl" />
+      </div>
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 25px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(13, 13, 13, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
+      {/* Navbar */}
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/20 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-black tracking-[0.2em] uppercase">
+              Dhiraj Sakhare
+            </h1>
+          </div>
 
-        .logo {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--accent-orange);
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-yellow);
-        }
-
-        /* Hero Section */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            position: relative;
-            background: radial-gradient(circle at 80% 20%, rgba(243, 146, 0, 0.08) 0%, transparent 50%);
-        }
-
-        .hero-intro {
-            color: var(--accent-orange);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header h1 {
-            font-size: 5.5rem;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
-        }
-
-        header h1 span {
-            background: linear-gradient(45deg, var(--accent-orange), var(--accent-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-desc {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin-bottom: 40px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--text-main);
-            color: var(--bg-color);
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: transform 0.3s ease, background 0.3s ease;
-            width: fit-content;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            background: var(--accent-yellow);
-        }
-
-        /* Container & Grid Setup */
-        section {
-            padding: 100px 10%;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-orange);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            margin-bottom: 30px;
-            position: relative;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-orange);
-        }
-
-        .timeline-date {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--accent-yellow);
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .timeline-role {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-company {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        /* Works / Projects Grid */
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .work-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .work-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .work-img-placeholder {
-            width: 100%;
-            height: 250px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-family: 'Space Grotesk', sans-serif;
-            position: relative;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* Mock color accents for project categories */
-        .card-loyka .work-img-placeholder { background: linear-gradient(135deg, #3d1e11 0%, #1a0b05 100%); }
-        .card-corona .work-img-placeholder { background: linear-gradient(135deg, #e69500 0%, #593500 100%); }
-        .card-wine .work-img-placeholder { background: linear-gradient(135deg, #4a0014 0%, #1a0005 100%); }
-        .card-apstro .work-img-placeholder { background: linear-gradient(135deg, #f39200 0%, #4a2d00 100%); }
-
-        .work-content {
-            padding: 30px;
-        }
-
-        .work-tag {
-            display: inline-block;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--accent-yellow);
-            margin-bottom: 15px;
-        }
-
-        .work-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-
-        .work-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Skills Grid */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-box:hover {
-            background: var(--accent-orange);
-            color: var(--bg-color);
-            border-color: var(--accent-orange);
-            transform: scale(1.05);
-        }
-
-        /* Footer / Contact */
-        footer {
-            padding: 100px 10% 50px 10%;
-            background: #050505;
-            text-align: center;
-        }
-
-        .footer-title {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .footer-quote {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-        }
-
-        .contact-info {
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: var(--accent-yellow);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--text-main);
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-orange);
-        }
-
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.9rem;
-            color: #444444;
-        }
-
-        /* Responsive UI Adjustments */
-        @media (max-width: 768px) {
-            header h1 { font-size: 3.5rem; }
-            nav { padding: 20px; }
-            .nav-links { display: none; } /* Simplified for mobile */
-            section { padding: 80px 5%; }
-            .work-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation Menu -->
-    <nav>
-        <a href="#" class="logo">DHIRAJ<span>.DS</span></a>
-        <div class="nav-links">
-            <a href="#about">Journey</a>
-            <a href="#work">Featured Work</a>
-            <a href="#skills">Toolkit</a>
-            <a href="#contact">Let's Connect</a>
+          <nav className="hidden md:flex gap-8 text-sm uppercase tracking-[0.2em] text-white/70">
+            <a href="#about" className="hover:text-white transition">About</a>
+            <a href="#projects" className="hover:text-white transition">Projects</a>
+            <a href="#journey" className="hover:text-white transition">Journey</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
+          </nav>
         </div>
-    </nav>
+      </header>
 
-    <!-- Hero / Dynamic Header Section -->
-    <header>
-        <div class="hero-intro">Lo and behold[cite: 1]</div>
-        <h1>Creative Design<br><span>Embodied.</span></h1>
-        <p class="hero-desc">
-            I'm Dhiraj Dilip Sakhare, a Senior Graphic Designer & Creative Head based in Navi Mumbai[cite: 1]. Over 8 years of navigating both fine and applied arts to sculpt meaningful brand narratives[cite: 1].
-        </p>
-        <a href="#work" class="cta-btn">Explore Workfolio</a>
-    </header>
+      {/* Hero */}
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-32">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block mb-6 px-4 py-2 border border-white/20 rounded-full text-xs tracking-[0.3em] uppercase text-white/70">
+              Creative Head @ Loyka • 8+ Years Experience
+            </div>
 
-    <!-- Chronological Career Path -->
-    <section id="about">
-        <h2 class="section-title">The Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2022 - Present (4 Years)</div>
-                <h3 class="timeline-role">Creative Head / Senior Visualizer</h3>
-                <div class="timeline-company">Loyka Confectionery[cite: 1]</div>
-                <p>Leading brand experience layout design, modern premium confectionery packaging, corporate gifting visual systems, and comprehensive multi-market campaign identity aesthetics[cite: 1].</p>
+            <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight">
+              Designing
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-cyan-300">
+                Visual Stories
+              </span>
+            </h1>
+
+            <p className="mt-8 text-lg text-white/70 leading-relaxed max-w-xl">
+              I’m Dhiraj Dilip Sakhare — a creative designer from Navi Mumbai crafting premium packaging, branding and luxury visual experiences. Currently leading creative direction at Loyka with a passion for transforming ideas into unforgettable design systems.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition"
+              >
+                Explore Projects
+              </a>
+
+              <a
+                href="#contact"
+                className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition"
+              >
+                Let’s Connect
+              </a>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2020 - 2022</div>
-                <h3 class="timeline-role">Senior Graphic Designer</h3>
-                <div class="timeline-company">BGauss (EV) & RR Global[cite: 1]</div>
-                <p>Managed technical print setups, clean vector identities, branding frameworks, and sleek above-the-line/below-the-line marketing visual architecture for clean mobility ventures[cite: 1].</p>
+          </div>
+
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-[40px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-6 overflow-hidden shadow-2xl">
+              <div className="h-full w-full rounded-[30px] border border-white/10 bg-black/40 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_30%)]" />
+
+                <div className="text-center px-8 z-10">
+                  <div className="text-sm uppercase tracking-[0.4em] text-white/50 mb-4">
+                    Portfolio 2026
+                  </div>
+
+                  <h2 className="text-5xl font-black leading-none">
+                    Creative
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-cyan-300">
+                      Designer
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 text-white/60 text-sm leading-relaxed">
+                    Branding • Packaging • Visual Direction • Luxury Design
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2019 - 2020</div>
-                <h3 class="timeline-role">Lead Graphic Designer</h3>
-                <div class="timeline-company">Envision (Thinkclusive)[cite: 1]</div>
-                <p>Spearheaded comprehensive digital presence and large-scale, high-impact music festival collateral environments for premier international intellectual properties[cite: 1].</p>
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Deep-Dive Showcase Portfolios -->
-    <section id="work">
-        <h2 class="section-title">Featured Portfolios</h2>
-        <div class="work-grid">
-            
-            <!-- Project Unit: Loyka Confectionery -->
-            <div class="work-card card-loyka">
-                <div class="work-img-placeholder">
-                    <h2>LOYKA Confectionery</h2>
-                </div>
-                <div class="work-content">
-                    <span class="work-tag">Packaging & Visual Identity[cite: 1]</span>
-                    <h3>Almond Florentine & Cashew Brittle</h3>
-                    <p>Modern commercial keyline frameworks engineered utilizing structural Arkhip Display systems and exquisite typographic hierarchies for premium consumer experiences[cite: 1].</p>
-                </div>
+      {/* About */}
+      <section id="about" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div className="text-sm uppercase tracking-[0.3em] text-white/40 mb-4">
+              About Me
             </div>
 
-            <!-- Project Unit: Corona Sunsets -->
-            <div class="work-card card-corona">
-                <div class="work-img-placeholder">
-                    <h2>CORONA SUNSETS</h2>
-                </div>
-                <div class="work-content">
-                    <span class="work-tag">Experiential Design[cite: 1]</span>
-                    <h3>Festival Identity & Point-of-Sale</h3>
-                    <p>Comprehensive 3D environment architecture featuring full Griffin Mainstage design templates, bespoke pallet furniture layouts, entryways, and pristine custom bar systems[cite: 1].</p>
-                </div>
-            </div>
+            <h2 className="text-5xl font-black leading-tight">
+              Creativity Is Not Just My Skill.
+              <span className="block text-white/40">It’s My Identity.</span>
+            </h2>
+          </div>
 
-            <!-- Project Unit: Wine Collections -->
-            <div class="work-card card-wine">
-                <div class="work-img-placeholder">
-                    <h2>JACOB'S CREEK</h2>
-                </div>
-                <div class="work-content">
-                    <span class="work-tag">BTL Activations / Campaigns[cite: 1]</span>
-                    <h3>Big Bet Toolkit & Campaign Assets</h3>
-                    <p>Strategic localized product rollout strategies, custom structural corporate photo-op layout backdrops, and print collaterals executed across major regional hubs[cite: 1].</p>
-                </div>
-            </div>
+          <div>
+            <p className="text-white/70 leading-relaxed text-lg">
+              From sketching and painting during childhood to leading premium packaging and branding projects today, my journey has always revolved around visual storytelling. I specialize in creating emotionally engaging designs that combine strategy, aesthetics and market impact.
+            </p>
 
-            <!-- Project Unit: Personal Agency Brand -->
-            <div class="work-card card-apstro">
-                <div class="work-img-placeholder">
-                    <h2>APSTROMEDIA</h2>
-                </div>
-                <div class="work-content">
-                    <span class="work-tag">Brand Systems / Guidelines[cite: 1]</span>
-                    <h3>The Mechanics of Dark Tangerine</h3>
-                    <p>Bespoke personal corporate identity showcase highlighting core responsive UI mobile asset scaling mechanics alongside adaptive cross-platform responsive icons[cite: 1].</p>
-                </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Specialized Technical Toolkits -->
-    <section id="skills">
-        <h2 class="section-title">The Creative Engine</h2>
-        <div class="skills-container">
-            <div class="skill-box">Packaging Layouts</div>
-            <div class="skill-box">Brand Architecture</div>
-            <div class="skill-box">Vector Illustration</div>
-            <div class="skill-box">Adobe Illustrator</div>
-            <div class="skill-box">Adobe Photoshop</div>
-            <div class="skill-box">After Effects</div>
-            <div class="skill-box">CorelDraw</div>
-            <div class="skill-box">Digital Painting</div>
+      {/* Projects */}
+      <section id="projects" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
+        <div className="flex items-end justify-between gap-8 flex-wrap mb-16">
+          <div>
+            <div className="text-sm uppercase tracking-[0.3em] text-white/40 mb-4">
+              Selected Works
+            </div>
+
+            <h2 className="text-5xl font-black">
+              Featured Projects
+            </h2>
+          </div>
+
+          <p className="text-white/60 max-w-xl leading-relaxed">
+            A collection of premium branding, packaging and creative direction projects developed throughout my professional journey.
+          </p>
         </div>
-    </section>
 
-    <!-- Action-Driven Interactive Footer -->
-    <section id="contact" style="border: none; padding-bottom: 0;">
-        <footer>
-            <h2 class="footer-title">Unleash Your Curiosity[cite: 1]</h2>
-            <p class="footer-quote">"Design is so simple, that's why it is so complicated."[cite: 1]</p>
-            
-            <div class="contact-info">
-                <p>📩 <a href="mailto:dhirajds.360@gmail.com">dhirajds.360@gmail.com</a></p>
-                <p>📞 <a href="tel:+917021208568">+91 70212 08568</a></p>
-                <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 15px;">📍 Navi Mumbai, India[cite: 1]</p>
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition duration-500"
+            >
+              <div className="aspect-[16/10] bg-gradient-to-br from-purple-500/20 via-transparent to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1),transparent_60%)]" />
+
+                <div className="text-center p-8 z-10">
+                  <div className="text-xs uppercase tracking-[0.3em] text-white/50 mb-3">
+                    {project.year}
+                  </div>
+
+                  <h3 className="text-3xl font-black max-w-sm leading-tight mx-auto">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
+
+              <div className="p-8">
+                <div className="text-sm uppercase tracking-[0.2em] text-white/40 mb-4">
+                  {project.category}
+                </div>
+
+                <p className="text-white/70 leading-relaxed">
+                  {project.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Journey */}
+      <section id="journey" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
+        <div className="mb-20">
+          <div className="text-sm uppercase tracking-[0.3em] text-white/40 mb-4">
+            Journey
+          </div>
+
+          <h2 className="text-5xl font-black max-w-3xl leading-tight">
+            A Creative Journey Built Through Passion, Art & Experience.
+          </h2>
+        </div>
+
+        <div className="space-y-8">
+          {timeline.map((item, index) => (
+            <div
+              key={index}
+              className="grid md:grid-cols-[180px_1fr] gap-8 items-start border-t border-white/10 pt-8"
+            >
+              <div>
+                <div className="text-4xl font-black text-white/30">
+                  {item.year}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-white/70 leading-relaxed max-w-2xl">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
+        <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-16 text-center backdrop-blur-xl">
+          <div className="text-sm uppercase tracking-[0.4em] text-white/40 mb-8">
+            Design Philosophy
+          </div>
+
+          <blockquote className="text-4xl md:text-6xl font-black leading-tight max-w-5xl mx-auto">
+            “Design is not just what people see.
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-cyan-300">
+              It’s what people feel.”
+            </span>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="text-sm uppercase tracking-[0.3em] text-white/40 mb-4">
+              Contact
             </div>
 
-            <div class="social-links">
-                <a href="https://behance.net/apstromedia" target="_blank">Behance</a>
-                <a href="https://instagram.com/Dhiraj_ds" target="_blank">Instagram</a>
+            <h2 className="text-5xl font-black leading-tight">
+              Let’s Build
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">
+                Something Beautiful.
+              </span>
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-lg text-white/70">
+            <p>
+              Available for freelance collaborations, creative direction, packaging design and premium branding projects.
+            </p>
+
+            <div className="space-y-3">
+              <div>Email: hello@dhirajsakhare.com</div>
+              <div>Location: Navi Mumbai, Maharashtra</div>
+              <div>Role: Creative Head @ Loyka</div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <p class="copyright">logo created by dhiraj sakhare &copy; 2026. All Rights Reserved.</p>
-        </footer>
-    </section>
-
-</body>
-</html>
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-10 px-6 text-center text-white/40 text-sm uppercase tracking-[0.2em]">
+        © 2026 Dhiraj Dilip Sakhare • Crafted With Creativity
+      </footer>
+    </div>
+  );
+}
