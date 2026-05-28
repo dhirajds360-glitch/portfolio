@@ -1,332 +1,503 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhiraj Dilip Sakhare | Design Portfolio</title>
-  <!-- Tailwind CSS CDN for high-performance visual styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts for Gotham Alternatives (Inter & Montserrat) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --dark-tangerine: #FF8A00;
-      --bg-dark: #0B0B0C;
-      --card-bg: #131315;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-    }
-    .font-display {
-      font-family: 'Montserrat', sans-serif; /* Fallback placeholder matching the heavy geometric footprint of Arkhip/Gotham Bold */
-    }
-    .text-tangerine { color: var(--dark-tangerine); }
-    .bg-tangerine { background-color: var(--dark-tangerine); }
-    .border-tangerine { border-color: var(--dark-tangerine); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhiraj Dilip Sakhare | Portfolio</title>
+    <!-- Importing smooth modern fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #141414;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-orange: #F39200; /* Dark Tangerine */
+            --accent-yellow: #FFB319; /* Vibrant Yellow */
+            --border-color: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(243, 146, 0, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-intro {
+            color: var(--accent-orange);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            font-size: 5.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        header h1 span {
+            background: linear-gradient(45deg, var(--accent-orange), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: transform 0.3s ease, background 0.3s ease;
+            width: fit-content;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            background: var(--accent-yellow);
+        }
+
+        /* Container & Grid Setup */
+        section {
+            padding: 100px 10%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-orange);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-orange);
+        }
+
+        .timeline-date {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--accent-yellow);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .timeline-role {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Works / Projects Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .work-img-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-family: 'Space Grotesk', sans-serif;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Mock color accents for project categories */
+        .card-loyka .work-img-placeholder { background: linear-gradient(135deg, #3d1e11 0%, #1a0b05 100%); }
+        .card-corona .work-img-placeholder { background: linear-gradient(135deg, #e69500 0%, #593500 100%); }
+        .card-wine .work-img-placeholder { background: linear-gradient(135deg, #4a0014 0%, #1a0005 100%); }
+        .card-apstro .work-img-placeholder { background: linear-gradient(135deg, #f39200 0%, #4a2d00 100%); }
+
+        .work-content {
+            padding: 30px;
+        }
+
+        .work-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-yellow);
+            margin-bottom: 15px;
+        }
+
+        .work-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .work-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-box:hover {
+            background: var(--accent-orange);
+            color: var(--bg-color);
+            border-color: var(--accent-orange);
+            transform: scale(1.05);
+        }
+
+        /* Footer / Contact */
+        footer {
+            padding: 100px 10% 50px 10%;
+            background: #050505;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .footer-quote {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--accent-yellow);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--text-main);
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .copyright {
+            margin-top: 80px;
+            font-size: 0.9rem;
+            color: #444444;
+        }
+
+        /* Responsive UI Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.5rem; }
+            nav { padding: 20px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            section { padding: 80px 5%; }
+            .work-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body class="text-gray-100 antialiased selection:bg-[#FF8A00] selection:text-black">
+<body>
 
-  <!-- Fixed Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0C]/80 backdrop-blur-md border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      <div class="font-display font-black text-xl tracking-tighter uppercase">
-        DHIRAJ<span class="text-tangerine">.</span>
-      </div>
-      <div class="flex items-center space-x-8 text-sm font-medium tracking-wide text-gray-400">
-        <a href="#work" class="hover:text-tangerine transition-colors">Work</a>
-        <a href="#about" class="hover:text-tangerine transition-colors">About</a>
-        <a href="#contact" class="bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-tangerine hover:text-white transition-all duration-300">Let's Talk</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Splash Canvas -->
-  <header class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
-    <!-- Abstract Ambient Glow Backgrounds -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-tangerine/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="max-w-5xl mx-auto text-center z-10">
-      <p class="text-sm font-mono tracking-[0.3em] text-tangerine uppercase mb-4 animate-fade-in">Graphic Designer & Art Director</p>
-      <h1 class="font-display font-black text-5xl md:text-8xl tracking-tight leading-none mb-8 uppercase">
-        Unleash the enigma <br>of my work<span class="text-tangerine">.</span>
-      </h1>
-      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-        Crafting elite brand identities, premium keyline packaging, and high-impact digital experiences for industry leaders.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a href="#work" class="w-full sm:w-auto bg-tangerine text-black font-bold uppercase tracking-wider px-8 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-tangerine/20">
-          View Selected Work
-        </a>
-        <a href="#contact" class="w-full sm:w-auto border border-white/20 bg-white/5 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all">
-          Get in Touch
-        </a>
-      </div>
-    </div>
-    
-    <!-- Decorative bottom anchor -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono tracking-widest text-gray-500 uppercase animate-bounce">
-      Scroll to explore ↓
-    </div>
-  </header>
-
-  <!-- Main Selected Portfolio Work Portfolio Case Studies -->
-  <main id="work" class="max-w-7xl mx-auto px-6 py-24 space-y-32">
-    
-    <!-- Section Header -->
-    <div class="border-b border-white/10 pb-6 flex justify-between items-end">
-      <div>
-        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">01 // Main Showcases</p>
-        <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tight">Selected Workfolio</h2>
-      </div>
-      <span class="text-sm font-mono text-gray-500 hidden sm:inline">CREATIVE PORTFOLIO ©2026</span>
-    </div>
-
-    <!-- PROJECT #1: LOYKA CONFECTIONERY PREMIUM CHOCOLATE PACKAGING -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      <!-- Media/Mockup Gallery Layer -->
-      <div class="lg:col-span-7 space-y-6">
-        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
-          <img src="images/loyka-main.jpg" alt="Loyka Almond Florentine Box Mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="bg-black/80 text-white font-mono text-xs tracking-widest uppercase px-4 py-2 rounded border border-white/10">Premium Keyline Box</span>
-          </div>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#" class="logo">DHIRAJ<span>.DS</span></a>
+        <div class="nav-links">
+            <a href="#about">Journey</a>
+            <a href="#work">Featured Work</a>
+            <a href="#skills">Toolkit</a>
+            <a href="#contact">Let's Connect</a>
         </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/loyka-detail1.jpg" alt="Almond Florentine Choco ingredients close up Layout" class="w-full h-full object-cover">
-          </div>
-          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/loyka-detail2.jpg" alt="Spella Cookie Mini Cashews / Brownie Pack" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
-      <!-- Project Metadata Layout Panel -->
-      <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-tangerine bg-tangerine/10 border border-tangerine/20 px-3 py-1 rounded-full">Packaging Design</span>
-          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Loyka Almond Florentine</h3>
-          <p class="text-gray-400 font-mono text-sm">Client: August Assortments Pvt. Ltd. // Confectionery</p>
-        </div>
-        
-        <p class="text-gray-300 leading-relaxed font-light">
-          A delightful harmony of crunchy almonds and delicate sweetness of caramel wrapped in premium choco to create a bite-sized masterpiece. Built a cohesive premium keyline, shelf distribution graphics setup, and alternative brand extension wraps for Spella Cookie Mini (Cashews & Brownie lines).
+    </nav>
+
+    <!-- Hero / Dynamic Header Section -->
+    <header>
+        <div class="hero-intro">Lo and behold[cite: 1]</div>
+        <h1>Creative Design<br><span>Embodied.</span></h1>
+        <p class="hero-desc">
+            I'm Dhiraj Dilip Sakhare, a Senior Graphic Designer & Creative Head based in Navi Mumbai[cite: 1]. Over 8 years of navigating both fine and applied arts to sculpt meaningful brand narratives[cite: 1].
         </p>
+        <a href="#work" class="cta-btn">Explore Workfolio</a>
+    </header>
 
-        <!-- Typography Breakdown Asset Container -->
-        <div class="p-6 bg-[#131315] border border-white/5 rounded-xl space-y-4">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-tangerine">Typography Integration</h4>
-          <div class="flex items-center justify-between border-b border-white/5 pb-2">
-            <span class="font-display font-bold text-lg">ARKHIP BOLD</span>
-            <span class="text-xs text-gray-500 font-mono">Display Typeface</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="font-sans font-medium text-sm">Gotham Series</span>
-            <span class="text-xs text-gray-500 font-mono">Light / Medium / Bold / Italic</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-6 text-sm font-mono">
-          <div>
-            <span class="text-gray-500 block">Net Weight:</span>
-            <span class="text-white">180 Grams (12 Pcs)</span>
-          </div>
-          <div>
-            <span class="text-gray-500 block">Deliverable:</span>
-            <span class="text-white">PAN India Commercial Ready</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT #2: APSTROMEDIA CORPORATE BRAND IDENTITY MANUAL -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-12">
-      <!-- Project Metadata Layout Panel -->
-      <div class="lg:col-span-5 lg:order-1 lg:sticky lg:top-32 space-y-8">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">Identity & App Design</span>
-          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Apstromedia Identity</h3>
-          <p class="text-gray-400 font-mono text-sm">Deliverables: Logo Systems, App Design Guidelines (Android/iOS)</p>
-        </div>
-        
-        <p class="text-gray-300 leading-relaxed font-light">
-          Engineered a highly disciplined corporate identity guideline designed around sunset warmth and technical precision. Extensively mapped application layouts, cross-platform assets, scalability rules, and visual asset governance across dark systems.
-        </p>
-
-        <!-- Dynamic Color Palette Grid -->
-        <div class="p-6 bg-[#131315] border border-white/5 rounded-xl space-y-4">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-tangerine">Signature Brand Colorway</h4>
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-lg bg-tangerine shadow-inner flex-shrink-0"></div>
-            <div>
-              <p class="text-sm font-bold text-white">Dark Tangerine</p>
-              <p class="text-xs text-gray-400 leading-normal font-light">Associated with energy, youth, and happiness. Pairs beautifully with tones of sunsets like yellows, deep blues, and structural creams.</p>
+    <!-- Chronological Career Path -->
+    <section id="about">
+        <h2 class="section-title">The Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Present (4 Years)</div>
+                <h3 class="timeline-role">Creative Head / Senior Visualizer</h3>
+                <div class="timeline-company">Loyka Confectionery[cite: 1]</div>
+                <p>Leading brand experience layout design, modern premium confectionery packaging, corporate gifting visual systems, and comprehensive multi-market campaign identity aesthetics[cite: 1].</p>
             </div>
-          </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - 2022</div>
+                <h3 class="timeline-role">Senior Graphic Designer</h3>
+                <div class="timeline-company">BGauss (EV) & RR Global[cite: 1]</div>
+                <p>Managed technical print setups, clean vector identities, branding frameworks, and sleek above-the-line/below-the-line marketing visual architecture for clean mobility ventures[cite: 1].</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2019 - 2020</div>
+                <h3 class="timeline-role">Lead Graphic Designer</h3>
+                <div class="timeline-company">Envision (Thinkclusive)[cite: 1]</div>
+                <p>Spearheaded comprehensive digital presence and large-scale, high-impact music festival collateral environments for premier international intellectual properties[cite: 1].</p>
+            </div>
         </div>
-      </div>
-      <!-- Media/Mockup Gallery Layer -->
-      <div class="lg:col-span-7 lg:order-2 space-y-6">
-        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
-          <img src="images/apstromedia-brand.jpg" alt="Apstromedia Logo Book Architecture Guidelines" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="aspect-[4/3] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/apstromedia-ui1.jpg" alt="Android Interface App UI Framework Layout" class="w-full h-full object-cover">
-          </div>
-          <div class="aspect-[4/3] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/apstromedia-ui2.jpg" alt="iOS Mobile Design Setup View" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- PROJECT #3: CAMPO VIEJO & JACOB'S CREEK SOCIAL MATRICES -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-12">
-      <!-- Media/Mockup Gallery Layer -->
-      <div class="lg:col-span-7 space-y-6">
-        <div class="aspect-[16/10] bg-[#131315] border border-white/5 rounded-2xl overflow-hidden group relative shadow-2xl">
-          <img src="images/wine-campaign-main.jpg" alt="Campo Viejo Tempranillo Wine Instagram Ad Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/jacobs-creek.jpg" alt="Jacob's Creek Our Wines Toolkit Poster Creative" class="w-full h-full object-cover">
-          </div>
-          <div class="aspect-square bg-[#131315] border border-white/5 rounded-2xl overflow-hidden">
-            <img src="images/sunset-sessions.jpg" alt="Sunset Music Campaign Layout Portfolio Design" class="w-full h-full object-cover">
-          </div>
-        </div>
-      </div>
-      <!-- Project Metadata Layout Panel -->
-      <div class="lg:col-span-5 space-y-8">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Art Direction & Toolkit Campaigns</span>
-          <h3 class="font-display font-black text-4xl uppercase tracking-tight mt-4 mb-2">Pernod Ricard Portfolio Assets</h3>
-          <p class="text-gray-400 font-mono text-sm">Brands: Campo Viejo (Rioja Wine #1), Jacob's Creek</p>
-        </div>
-        
-        <p class="text-gray-300 leading-relaxed font-light">
-          Engineered hyper-expressive visual kits and performance advertisement frameworks mapping the product aesthetics onto regional themes. Infused design assets with descriptive tag configurations like <strong>"Bold, Sunny, Happy, Smooth, Mellow, and Tropical"</strong> under the concept of the Indian Sun.
-        </p>
+    <!-- Deep-Dive Showcase Portfolios -->
+    <section id="work">
+        <h2 class="section-title">Featured Portfolios</h2>
+        <div class="work-grid">
+            
+            <!-- Project Unit: Loyka Confectionery -->
+            <div class="work-card card-loyka">
+                <div class="work-img-placeholder">
+                    <h2>LOYKA Confectionery</h2>
+                </div>
+                <div class="work-content">
+                    <span class="work-tag">Packaging & Visual Identity[cite: 1]</span>
+                    <h3>Almond Florentine & Cashew Brittle</h3>
+                    <p>Modern commercial keyline frameworks engineered utilizing structural Arkhip Display systems and exquisite typographic hierarchies for premium consumer experiences[cite: 1].</p>
+                </div>
+            </div>
 
-        <!-- Multi-brand asset tag layout cloud -->
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
-          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">TEMPRANILLO TOOLKIT</span>
-          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">WHEAT & FINEST BREWS</span>
-          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">THE RIVERS SERIES</span>
-          <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-gray-300">FIRESTARTER MIXTAPE</span>
+            <!-- Project Unit: Corona Sunsets -->
+            <div class="work-card card-corona">
+                <div class="work-img-placeholder">
+                    <h2>CORONA SUNSETS</h2>
+                </div>
+                <div class="work-content">
+                    <span class="work-tag">Experiential Design[cite: 1]</span>
+                    <h3>Festival Identity & Point-of-Sale</h3>
+                    <p>Comprehensive 3D environment architecture featuring full Griffin Mainstage design templates, bespoke pallet furniture layouts, entryways, and pristine custom bar systems[cite: 1].</p>
+                </div>
+            </div>
+
+            <!-- Project Unit: Wine Collections -->
+            <div class="work-card card-wine">
+                <div class="work-img-placeholder">
+                    <h2>JACOB'S CREEK</h2>
+                </div>
+                <div class="work-content">
+                    <span class="work-tag">BTL Activations / Campaigns[cite: 1]</span>
+                    <h3>Big Bet Toolkit & Campaign Assets</h3>
+                    <p>Strategic localized product rollout strategies, custom structural corporate photo-op layout backdrops, and print collaterals executed across major regional hubs[cite: 1].</p>
+                </div>
+            </div>
+
+            <!-- Project Unit: Personal Agency Brand -->
+            <div class="work-card card-apstro">
+                <div class="work-img-placeholder">
+                    <h2>APSTROMEDIA</h2>
+                </div>
+                <div class="work-content">
+                    <span class="work-tag">Brand Systems / Guidelines[cite: 1]</span>
+                    <h3>The Mechanics of Dark Tangerine</h3>
+                    <p>Bespoke personal corporate identity showcase highlighting core responsive UI mobile asset scaling mechanics alongside adaptive cross-platform responsive icons[cite: 1].</p>
+                </div>
+            </div>
+
         </div>
-      </div>
     </section>
 
-    <!-- SECTION 02: MISCELLANEOUS ADDITIONAL MEDIA AND POSTERS GRID -->
-    <section class="space-y-12 pt-12">
-      <div class="border-b border-white/10 pb-6">
-        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">02 // Alternative Creative Vectors</p>
-        <h3 class="font-display font-black text-2xl md:text-4xl uppercase tracking-tight">Public Welfare, Entertainment & Concept Art</h3>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Poster item 1 -->
-        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
-          <img src="images/poster-welfare.jpg" alt="Public Welfare Public awareness visual art poster design" class="w-full h-full object-cover">
-          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
-            <p class="text-xs font-mono text-tangerine">PUBLIC WELFARE</p>
-          </div>
+    <!-- Specialized Technical Toolkits -->
+    <section id="skills">
+        <h2 class="section-title">The Creative Engine</h2>
+        <div class="skills-container">
+            <div class="skill-box">Packaging Layouts</div>
+            <div class="skill-box">Brand Architecture</div>
+            <div class="skill-box">Vector Illustration</div>
+            <div class="skill-box">Adobe Illustrator</div>
+            <div class="skill-box">Adobe Photoshop</div>
+            <div class="skill-box">After Effects</div>
+            <div class="skill-box">CorelDraw</div>
+            <div class="skill-box">Digital Painting</div>
         </div>
-        <!-- Poster item 2 -->
-        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
-          <img src="images/poster-tribevibe.jpg" alt="TribeVibe Entertainment Event Poster Identity layout artwork" class="w-full h-full object-cover">
-          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
-            <p class="text-xs font-mono text-tangerine">TRIBEVIBE ENTERTAINMENT</p>
-          </div>
-        </div>
-        <!-- Poster item 3 -->
-        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
-          <img src="images/poster-drake.jpg" alt="Don't Let Daddy Know Drake Variant Music Poster Canvas Art" class="w-full h-full object-cover">
-          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
-            <p class="text-xs font-mono text-tangerine">DONT LET DADDY KNOW</p>
-          </div>
-        </div>
-        <!-- Poster item 4 -->
-        <div class="bg-[#131315] border border-white/5 rounded-xl overflow-hidden aspect-[3/4] group relative">
-          <img src="images/poster-envision.jpg" alt="Envision Worx Thinkclusive Corporate Creative vector asset" class="w-full h-full object-cover">
-          <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent pt-12">
-            <p class="text-xs font-mono text-tangerine">ENVISION / THINKCLUSIVE</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-  </main>
+    <!-- Action-Driven Interactive Footer -->
+    <section id="contact" style="border: none; padding-bottom: 0;">
+        <footer>
+            <h2 class="footer-title">Unleash Your Curiosity[cite: 1]</h2>
+            <p class="footer-quote">"Design is so simple, that's why it is so complicated."[cite: 1]</p>
+            
+            <div class="contact-info">
+                <p>📩 <a href="mailto:dhirajds.360@gmail.com">dhirajds.360@gmail.com</a></p>
+                <p>📞 <a href="tel:+917021208568">+91 70212 08568</a></p>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 15px;">📍 Navi Mumbai, India[cite: 1]</p>
+            </div>
 
-  <!-- About / Experience Summary Canvas Block Section -->
-  <section id="about" class="bg-[#131315] border-y border-white/5 py-24 px-6 relative">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-4">
-        <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-2">03 // The Designer</p>
-        <h3 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tight leading-none">Dhiraj Dilip Sakhare<span class="text-tangerine">.</span></h3>
-        <p class="text-gray-500 font-mono text-xs mt-4">FREELANCE VECTOR ARTIST & GRAPHIC DESIGNER</p>
-      </div>
-      <div class="md:col-span-8 text-gray-400 font-light leading-relaxed space-y-6 text-base md:text-lg">
-        <p>
-          Operating at the crossroads of structured brand manuals and expressive packaging mechanics. Experienced in taking products from baseline industrial structural guides to highly competitive, market-ready consumer packaging configurations across global and regional commercial landscapes.
-        </p>
-        <div class="grid grid-cols-2 gap-6 pt-4 text-sm font-mono">
-          <div>
-            <h5 class="text-white font-bold mb-1">Core Expertise</h5>
-            <ul class="space-y-1 text-gray-500">
-              <li>• Keyline & Packaging Layouts</li>
-              <li>• Complete Visual Identities</li>
-              <li>• Dynamic Media Toolkits</li>
-            </ul>
-          </div>
-          <div>
-            <h5 class="text-white font-bold mb-1">Brand Experiences</h5>
-            <ul class="space-y-1 text-gray-500">
-              <li>• Loyka Confectionery</li>
-              <li>• Pernod Ricard India</li>
-              <li>• Apstromedia Systems</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="social-links">
+                <a href="https://behance.net/apstromedia" target="_blank">Behance</a>
+                <a href="https://instagram.com/Dhiraj_ds" target="_blank">Instagram</a>
+            </div>
 
-  <!-- Contact & Artistic Showroom Call To Action Footer Section -->
-  <section id="contact" class="max-w-5xl mx-auto px-6 py-28 text-center relative">
-    <p class="text-xs font-mono uppercase tracking-widest text-tangerine mb-4">Connect and Create</p>
-    <h2 class="font-display font-black text-4xl md:text-7xl uppercase tracking-tight mb-8">
-      Witness an <br>Artistic Marvel<span class="text-tangerine">.</span>
-    </h2>
-    <p class="text-gray-400 max-w-xl mx-auto font-light leading-relaxed mb-12">
-      Reach out to me for an enchanting showcase of my extensive creative ecosystem or to commission industrial grade artwork.
-    </p>
-    
-    <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-6 p-2 bg-[#131315] border border-white/5 rounded-2xl max-w-xl mx-auto w-full">
-      <span class="text-sm font-mono px-4 text-gray-300 py-3 sm:py-0">dhiraj.sakhare.design@example.com</span>
-      <a href="mailto:dhiraj.sakhare.design@example.com" class="w-full sm:w-auto bg-white text-black font-bold uppercase text-xs tracking-wider px-6 py-4 rounded-xl hover:bg-tangerine hover:text-white transition-all duration-300">
-        Send Email Instant
-      </a>
-    </div>
-  </section>
-
-  <!-- Absolute Base Structural Footer Bar Container -->
-  <footer class="border-t border-white/5 py-12 text-center text-xs font-mono text-gray-600 tracking-wider">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p>© 2026 DHIRAJ DILIP SAKHARE. ALL RIGHTS PROTECTED.</p>
-      <div class="space-x-6 text-gray-500">
-        <a href="#" class="hover:text-tangerine transition-colors">BEHANCE</a>
-        <a href="#" class="hover:text-tangerine transition-colors">INSTAGRAM</a>
-        <a href="#" class="hover:text-tangerine transition-colors">LINKEDIN</a>
-      </div>
-    </div>
-  </footer>
+            <p class="copyright">logo created by dhiraj sakhare &copy; 2026. All Rights Reserved.</p>
+        </footer>
+    </section>
 
 </body>
 </html>
